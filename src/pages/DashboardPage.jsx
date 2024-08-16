@@ -82,12 +82,12 @@ const Dashboard = ({ selectedMonth }) => {
       <div className="w-full h-[65%] mt-4">
         <TransactionTable transactions={transactions} />
       </div>
-      <div className="w-full h-[10%] flex justify-center items-center p-">
-      {currentPage > 1 && <div onClick={()=>{setCurrentPage((prev)=> prev-1)}}> Prev </div>}
-       <p>{currentPage}</p>
-       <p>-</p>
-       <p>{Math.ceil(maxPages/10)}</p>
-       {currentPage < (Math.ceil(maxPages/10)) && <div onClick={()=>{setCurrentPage((prev)=> prev+1)}}> Next </div>}
+      <div className="w-full h-[10%] flex justify-center items-center  ">
+      {currentPage > 1 && <div onClick={()=>{setCurrentPage((prev)=> prev-1)}} className="border border-b-gray-950 rounded-md p-1"> Prev </div>}
+       <p className="font-bold">{currentPage}</p>
+       <p className="font-bold">-</p>
+       <p className="font-bold">{Math.ceil(maxPages/10)}</p>
+       {currentPage < (Math.ceil(maxPages/10)) && <div onClick={()=>{setCurrentPage((prev)=> prev+1)}} className="border border-b-gray-950 rounded-md p-1"> Next </div>}
       </div>
     </div>
   );
